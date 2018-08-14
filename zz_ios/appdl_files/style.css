@@ -1,0 +1,128 @@
+/* CSS Document */
+html,body,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ol,ul,li,form,table,tr,th,td {margin:0px;padding:0px;}
+body{overflow-y:scroll; *overflow-y:auto; background-color:#fff;}
+body,input,textarea,select{font-family:"Microsoft YaHei","simhei";font-size:12px; color:#4b4b4b; }
+input, textarea, select, button {font-size:12px;font-weight:normal;font-family:inherit}
+input[type="button"],input[type="submit"],select,button {cursor:pointer}
+table {border-collapse:collapse;border-spacing:0;width:100%;}
+em,i,b {font-style: normal;font-weight: normal}
+/*i {transition:background 0.5s linear 0s}*/
+ul,ol,li,dl{list-style-type:none;}   
+a {text-decoration: none;color: #333}
+img {
+	vertical-align: top;
+	border: none 0;
+	-ms-interpolation-mode: bicubic;
+	margin:0;padding:0;
+}
+.fl{float:left;}
+.fr{float:right;}
+.clear{ float: none !important;
+    clear: both;
+    width: auto !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-size: 0;
+    line-height:0; zoom:1;}
+
+body { background:#FFF; }
+
+#wrap{ 
+    width:100%; margin:0 auto; min-width:320px; 
+    background: url(../images/pattern.png) center 0 no-repeat;
+    background-size: 100% auto;
+}
+.cont{ width:90%; margin:0 auto; padding-top: 80px; min-height: 800px; }
+.top{ width:100%; height:auto;}
+h1{ font-size:22px; color:#3b3b3b; line-height:30px; text-align:center; font-weight:normal; padding-top:15px;}
+
+.bz {
+    padding-top: 30px;
+}
+
+.verinfo {
+    width: 230px;
+    border-top: 1px solid #CCC;
+    margin: 0 auto;
+    padding-top: 20px;
+    color: #8a8a8a !important;
+    font-size: 16px;
+    text-align: center;
+}
+
+#pc {
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#pc h3 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#pc .qrcode {
+    display: inline-block;
+    width: 200px;
+    margin-top: 20px;
+}
+
+
+@media only screen and (max-width: 370px){/*当屏幕尺寸小于370px时，应用下面的CSS样式*/
+h1{ font-size:18px; padding-top:5px;}
+.cont p{ color:#3b3b3b; font-size:14px; line-height:20px;}
+.logo{ width:20%; height:auto;  margin:0 auto; padding:10px 0;}
+.cont a.download{ width:80%; height:42px; background:#ff700c; border:1px solid #f75e01; color:#fff; line-height:44px; border-radius:100px; display:block; font-size:18px; text-align:center; margin:0 auto; margin-bottom:20px;}
+.bz_title{ font-size:18px; color:#ff700c; line-height:26px;}
+.bz p{ color:#3b3b3b; font-size:14px; line-height:22px;}
+.bz_img{ width:100%; height:auto; margin:10px 0 25px 0; display:block;}
+.bz p i{ background:url(../images/xh_icon.png) no-repeat;  width:20px; height:20px; line-height:20px;  background-size:cover; color:#fff;  text-align:center; font-size:14px; display:block; float:left; margin-right:5px;}
+}
+
+
+@media only screen and (min-width: 375px) and (max-width: 768px){ /*当屏幕尺寸在375px和768px之间时，应用下面的CSS
+样式*/
+h1{font-size:30px; color:#3b3b3b; line-height:42px; text-align:center; font-weight:normal; padding-top:25px;}
+.cont p{ color:#3b3b3b; font-size:20px; line-height:36px; }
+.logo{ width:20%; height:auto; margin:0 auto;padding:15px 0;}
+.cont a.download{ width:80%; height:50px; background:#ff700c; border:1px solid #f75e01; color:#fff; line-height:50px; border-radius:100px; display:block; font-size:20px; text-align:center; margin:0 auto; margin-bottom:30px;}
+.bz_title{ font-size:25px; color:#ff700c; line-height:26px;}
+.bz p{ color:#3b3b3b; font-size:20px; line-height:36px;}
+.bz_img{ width:100%; height:auto; margin:15px 0 30px 0; display:block;}
+.bz p i{ background:url(../images/xh_icon.png) no-repeat;  width:24px; height:24px; line-height:24px; margin-top:6px;  background-size:cover; color:#fff;  text-align:center; font-size:14px; display:block; float:left; margin-right:5px;}
+}
+
+@media only screen and (min-width: 768px) { /*当屏幕尺寸大于768px时，应用下面的CSS样式*/
+h1{ font-size:36px;}
+.cont p{ color:#3b3b3b; font-size:24px;line-height:42px; padding-top:10px;}
+.logo{ width:114px; height:114px; margin:0 auto; padding:25px 0;}
+.cont a.download{ width:420px; height:98px; background:#ff700c; border:1px solid #f75e01; color:#fff; line-height:100px; border-radius:100px; display:block; font-size:24px; text-align:center; margin:0 auto; margin-bottom:40px;}
+.bz_title{font-size:30px; color:#ff700c; line-height:30px;}
+.bz p{ color:#3b3b3b; font-size:24px; line-height:42px; padding:10px 0;}
+.bz_img{ width:100%; height:auto; margin:30px 0 55px 0; display:block;}
+.bz p i{ background:url(../images/xh_icon.png) no-repeat; width:32px; height:32px; color:#fff; line-height:32px; text-align:center; font-size:18px; display:block; float:left; margin-right:8px;}
+
+}
+
+
+
+.trust-link {
+    display: inline-block;
+    background: #ff700c;
+    padding: 2px 10px;
+    margin: 0 3px;
+    color: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

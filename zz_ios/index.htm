@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://github.com/apps/native/download.html?platform=dt -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta content="telephone=no" name="format-detection">
+        <title>APP 下载</title>
+        <meta name="applicable-device" content="mobile">
+        <link href="./appdl_files/style.css" rel="stylesheet">
+    </head>
+<body>
+	<div id="wrap">
+    	<div id="top" class="top" style="display: none;"><img src="./appdl_files/top_img.jpg" width="100%"></div>
+    	<div class="cont">
+       	  <h1 id="name">IOS App</h1>
+            <div class="logo"><img id="icon_img" src="./appdl_files/logo.png" width="100%"></div>
+            <a id="download-btn" href="itms-services://?action=download-manifest&amp;url=manifest.plist" class="download">下载安装</a>
+            <div class="verinfo" id="verinfo" style="display: block">版本号：1.0.0</div>
+
+            <div id="pc" style="display: none">
+                <h3>请使用手机扫描二维码下载</h3>
+                <div class="qrcode" id="qrcode" title="location">
+
+                <canvas width="200" height="200" style="display: none;"></canvas><img src="" style="display: block;"></div>
+            </div>
+            
+            <div class="bz" id="ios_tip" style="display: block;">
+            	<div class="bz_title">苹果IOS系统用户必看</div>
+                <p>由于iOS增强了企业版开发者证书的验证规则，因此iOS需要用户手动信任企业证书，才能正常使用。
+
+                    如果您知道如何操作,请<a class="trust-link" href="setting.mobileprovision">点击此处</a>快速跳转到设备管理设置界面, 并选择信任对应证书
+                </p>
+                <br>
+                <p>默认情况下，打开下载app是这样的情况</p>
+                <div class="bz_img"><img src="./appdl_files/1.jpg" width="100%"></div>
+                <p><i>1</i>点开App,弹出未受信任的开发者，记住弹框中冒号后面的大写字母。关闭，进入设置</p>
+                <div class="bz_img"><img src="./appdl_files/01.jpg" width="100%"></div>
+                <p><i>2</i>依次打开：设置 &gt;通用 &gt;</p>
+                <div class="bz_img"><img src="./appdl_files/2.jpg" width="100%"></div>
+                <p><i>3</i>进入：设备管理 <a class="trust-link" href="setting.mobileprovision">点此快速进入</a></p>
+                <div class="bz_img"><img src="./appdl_files/3.jpg" width="100%"></div>
+                <p><i>4</i>找到所对应的企业级应用（就是打开App,冒号后面的大写字母）</p>
+                <div class="bz_img"><img src="./appdl_files/4.jpg" width="100%"></div>
+                <p><i>5</i>选择信任，进入</p>
+                <div class="bz_img"><img src="./appdl_files/5.jpg" width="100%"></div>
+                <p><i>6</i>点击弹出的弹框中的“信任“。大功告成，可以愉快的进入App了！</p>
+                <div class="bz_img"><img src="./appdl_files/6.jpg" width="100%"></div>
+                </div>
+            </div>
+        	
+        </div>
+    	
+      
+      
+     
+<script type="text/javascript">
+
+//页面解析到当前为止所有的script标签
+
+function getPath(){
+var js = document.scripts;
+//js[js.length - 1] 就是当前的js文件的路径
+js = js[js.length - 1].src.substring(0, js[js.length - 1].src.lastIndexOf("/"));
+//输出当前js文件所在的目录
+console.info(js);
+ 
+}
+
+
+var $id = function(id) { return document.getElementById(id) }
+var isTouchDevice = function() {  return 'ontouchstart' in window || 'onmsgesturechange' in window; }
+window.onload = function(){
+  var btn = $id("download-btn");
+  var el_h1 = $id('name')
+  var el_icon = $id('icon_img')
+  var el_verinfo = $id('verinfo')
+  var ua = navigator.userAgent.toLowerCase();
+  var bIsIpad = ua.match(/ipad/i) == "ipad";
+  var bIsIpod = ua.match(/ipod/i) == "ipod";
+  var bIsIphoneOs = ua.match(/iphone os/i) == "iphone os";
+  var bIsAndroid = ua.match(/android/i) == "android";
+  var bIsWM = ua.match(/windows mobile/i) == "windows mobile";
+
+  var urlPath = getPath();
+
+  var params = (function() {
+      var p = {}
+      location.search.substring(1).split('&').forEach(function(pair) {
+          var k_v = pair.split('=')
+          p[k_v[0]] = k_v[1]
+      })
+      return p
+  })()
+
+   // el_icon.setAttribute('src', 'platform/' + params.platform + '/logo.png')
+
+    var dl_url = ''
+    if (bIsIpod || bIsIpad || bIsIphoneOs) {
+        var dl_url = "itms-services://?action=download-manifest&url=" + urlPath + "/manifest.plist";
+        $id('ios_tip').style.display = 'block'
+    } else  {
+        var dl_url = urlPath + "/manifest.apk"
+    }
+
+    btn.setAttribute("href", dl_url)
+    if(params.download) {
+        location.href = dl_url
+    }
+
+    if (navigator.userAgent.indexOf('MicroMessenger') <= -1) {
+        $id('top').style.display="none";
+    } else {
+        if (bIsIpod || bIsIpad || bIsIphoneOs) {
+            //location.href = 'QQ 应用宝链接'
+        }
+    }
+
+    if(!isTouchDevice()) {
+        $id('pc').style.display = 'block';
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'platform/'+ params.platform +'/version.json');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var cpInfo = JSON.parse(xhr.responseText);
+            el_h1.innerHTML = cpInfo.name
+            el_verinfo.innerHTML = '版本号：' + (bIsAndroid ? cpInfo.android : cpInfo.ios)
+        }
+    };
+   // xhr.send();
+}
+</script>
+
+<script src="./appdl_files/qrcode.min.js"></script>
+<script>
+    var qrcode = new QRCode($id('qrcode'), {
+        text: location.href,
+        width: 200,
+        height: 200,
+        colorDark : "#333333",
+        colorLight : "#ffffff"
+    });
+</script> 
+
+ 
+
+</body></html>
