@@ -57,19 +57,17 @@
 
 //页面解析到当前为止所有的script标签
 
-function getPath(){
-var js = document.scripts;
-//js[js.length - 1] 就是当前的js文件的路径
-js = js[js.length - 1].src.substring(0, js[js.length - 1].src.lastIndexOf("/"));
-//输出当前js文件所在的目录
-console.info(js);
+function getPath(){ 
  
+   return location.href.substring(0,url.lastIndexOf("/"));
+
 }
 
 
 var $id = function(id) { return document.getElementById(id) }
 var isTouchDevice = function() {  return 'ontouchstart' in window || 'onmsgesturechange' in window; }
 window.onload = function(){
+
   var btn = $id("download-btn");
   var el_h1 = $id('name')
   var el_icon = $id('icon_img')
